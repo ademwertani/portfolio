@@ -3,130 +3,566 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Adem Wertani – Portfolio</title>
-  <meta name="description" content="Full-stack and mobile developer portfolio." />
+  <title>Adem Wertani | Full-Stack Developer Portfolio</title>
+  <meta name="description" content="Professional portfolio of Adem Wertani, Full-Stack Developer specialized in web applications, APIs, deployment, and scalable digital solutions." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0b1220;
-      --card:#11192b;
-      --ink:#e5eefc;
-      --muted:#9bb0d6;
-      --accent:#7CAE2A;
-      --accent-2:#2D3281;
-      --ring:#20304f;
-      --shadow:0 10px 25px rgba(0,0,0,.25);
+      --bg:#0b1020;
+      --bg-soft:#111830;
+      --card:#141d36;
+      --card-2:#1a2443;
+      --line:#2a3760;
+      --text:#f4f7ff;
+      --muted:#aebadb;
+      --accent:#5eead4;
+      --accent-2:#60a5fa;
+      --blue:#2563eb;
+      --white:#ffffff;
+      --shadow:0 12px 30px rgba(2,8,23,.34);
+      --shadow-lg:0 24px 60px rgba(2,8,23,.50);
+      --radius:20px;
     }
+
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-    a{color:inherit;text-decoration:none}
-    .container{width:min(1100px,calc(100% - 40px));margin:0 auto}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(94,234,212,.12), transparent 30%),
+        radial-gradient(circle at top right, rgba(96,165,250,.16), transparent 28%),
+        linear-gradient(180deg,#0b1020 0%, #0e1630 42%, #0b1020 100%);
+      color:var(--text);
+    }
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    .container{width:min(1180px,calc(100% - 40px));margin:0 auto}
 
-    /* Header / Hero */
-    header.hero{padding:48px 0 24px;position:relative;top:auto;background:linear-gradient(180deg,rgba(11,18,32,.95),rgba(11,18,32,.70) 70%,rgba(11,18,32,0));backdrop-filter:saturate(120%) blur(6px);z-index:2}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:14px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
-    .brand .dot{width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#9fe34a)}
-    .links{display:flex;gap:14px;flex-wrap:wrap}
-    .links a{color:var(--ink);border:1px solid var(--ring);padding:10px 12px;border-radius:10px}
-    .links a:hover{border-color:var(--accent)}
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:30;
+      backdrop-filter:blur(14px) saturate(120%);
+      background:rgba(11,16,32,.78);
+      border-bottom:1px solid rgba(255,255,255,.05);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:16px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:800;
+      letter-spacing:.2px;
+      font-size:1rem;
+      white-space:nowrap;
+    }
+    .brand .dot{
+      width:12px;height:12px;border-radius:50%;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      box-shadow:0 0 0 6px rgba(124,174,42,.12);
+    }
+    .links{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .links a{
+      padding:10px 14px;
+      border-radius:12px;
+      border:1px solid transparent;
+      color:var(--muted);
+      font-weight:600;
+      transition:.2s ease;
+    }
+    .links a:hover{
+      color:var(--text);
+      border-color:var(--line);
+      background:rgba(255,255,255,.03);
+    }
 
-    .lead{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center;padding:22px 0 10px}
-    @media(max-width:900px){.lead{grid-template-columns:1fr}}
-    h1{font-size:clamp(28px,4.5vw,44px);line-height:1.1;margin:0 0 10px}
-    .subtitle{color:var(--muted);margin:0 0 18px}
-    .chiprow{display:flex;flex-wrap:wrap;gap:8px}
-    .chip{background:#0f1b31;border:1px solid var(--ring);padding:8px 12px;border-radius:999px;font-size:.92rem}
-    .cta{display:flex;gap:10px;margin-top:14px}
-    .btn{appearance:none;border:none;padding:12px 16px;border-radius:12px;font-weight:700;cursor:pointer}
-    .btn.primary{background:linear-gradient(135deg,var(--accent),color-mix(in oklab,var(--accent),white 18%));color:#0b1220;box-shadow:0 8px 18px rgba(124,174,42,.22)}
-    .btn.ghost{background:rgba(255,255,255,.02);color:var(--ink);border:1px solid var(--ring)}
-    .btn:hover{filter:brightness(1.05)}
+    .hero{
+      padding:38px 0 26px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:24px;
+      align-items:stretch;
+    }
+    .hero-copy,
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:28px;
+      box-shadow:var(--shadow);
+    }
+    .hero-copy{
+      padding:34px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-copy::before{
+      content:"";
+      position:absolute;
+      inset:auto -40px -40px auto;
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(124,174,42,.24), transparent 70%);
+      pointer-events:none;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(94,234,212,.10);
+      color:#c9fff8;
+      border:1px solid rgba(94,234,212,.18);
+      font-size:.88rem;
+      font-weight:700;
+      margin-bottom:16px;
+    }
+    h1{
+      margin:0 0 14px;
+      font-size:clamp(2rem,4.7vw,4rem);
+      line-height:1.04;
+      letter-spacing:-.03em;
+    }
+    .accent{color:#7ee7db}
+    .subtitle{
+      margin:0;
+      color:var(--muted);
+      font-size:1.03rem;
+      max-width:760px;
+      line-height:1.8;
+    }
+    .hero-points{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-top:24px;
+    }
+    .hero-stat{
+      padding:14px 16px;
+      border:1px solid rgba(255,255,255,.06);
+      background:rgba(255,255,255,.025);
+      border-radius:18px;
+    }
+    .hero-stat strong{
+      display:block;
+      font-size:1.2rem;
+      margin-bottom:4px;
+    }
+    .hero-stat span{
+      color:var(--muted);
+      font-size:.92rem;
+    }
+    .chiprow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:22px;
+    }
+    .chip{
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:.92rem;
+      background:#0f1830;
+      border:1px solid var(--line);
+      color:var(--text);
+      font-weight:600;
+    }
+    .cta{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:24px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-height:48px;
+      padding:12px 18px;
+      border-radius:14px;
+      border:1px solid transparent;
+      font-weight:700;
+      transition:.2s ease;
+    }
+    .btn.primary{
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#06111c;
+      box-shadow:0 14px 30px rgba(96,165,250,.22);
+    }
+    .btn.primary:hover{transform:translateY(-1px);filter:brightness(1.02)}
+    .btn.ghost{
+      border-color:var(--line);
+      color:var(--text);
+      background:rgba(255,255,255,.025);
+    }
+    .btn.ghost:hover{background:rgba(255,255,255,.05)}
+    .btn.small{padding:10px 14px;min-height:40px;font-size:.92rem;border-radius:12px}
 
-    /* Sections / Cards */
-    section{padding:44px 0}
-    .section-title{font-size:1.4rem;margin:0 0 18px;position:relative;display:inline-block}
-    .section-title::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+    .hero-card{
+      padding:18px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-card::after{
+      content:"";
+      position:absolute;
+      inset:auto auto -50px -50px;
+      width:180px;height:180px;border-radius:50%;
+      background:radial-gradient(circle, rgba(45,50,129,.25), transparent 72%);
+      pointer-events:none;
+    }
+
+    .section{padding:34px 0}
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom:18px;
+    }
+    .section-title{
+      margin:0;
+      font-size:1.55rem;
+      letter-spacing:-.02em;
+    }
+    .section-note{
+      color:var(--muted);
+      margin:0;
+      max-width:720px;
+    }
+
     .grid{display:grid;gap:16px}
     .projects{grid-template-columns:repeat(12,1fr)}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01));border:1px solid var(--ring);border-radius:16px;box-shadow:var(--shadow);overflow:hidden;transition:transform .18s ease,box-shadow .18s ease}
-    .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.35)}
-    .thumb{aspect-ratio:16/9;width:100%;object-fit:cover;transition:transform .25s ease}
-    .card:hover .thumb{transform:scale(1.02)}
-    .pad{padding:14px}
-    .title{font-weight:800;margin:0 0 6px}
-    .meta{color:var(--muted);font-size:.95rem;margin:0 0 8px}
-    .tagrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
-    .tag{font-size:.85rem;background:#0e1a2e;border:1px solid var(--ring);padding:6px 10px;border-radius:999px}
-
-    /* Grid spans */
+    .span-12{grid-column:span 12}
+    .span-8{grid-column:span 8}
     .span-6{grid-column:span 6}
     .span-4{grid-column:span 4}
-    .span-12{grid-column:span 12}
-    @media (max-width:900px){ .span-6,.span-4{grid-column:span 12} }
 
-    /* Skills / Timeline */
-    .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    @media(max-width:900px){.skills{grid-template-columns:1fr}}
-    .pill{display:inline-flex;align-items:center;gap:8px;background:#0e1a2e;border:1px solid var(--ring);padding:10px 12px;border-radius:999px}
-    .timeline{display:grid;gap:14px}
-    .item{display:grid;grid-template-columns:140px 1fr;gap:14px}
-    @media(max-width:720px){.item{grid-template-columns:1fr}}
-    .when{color:var(--muted)}
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+    .card:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--shadow-lg);
+      border-color:rgba(124,174,42,.28);
+    }
+    .thumb{
+      width:100%;
+      aspect-ratio:16/9;
+      object-fit:cover;
+      transition:transform .28s ease;
+    }
+    .card:hover .thumb{transform:scale(1.03)}
+    .pad{padding:18px}
+    .title{font-size:1.08rem;font-weight:800;margin:0 0 8px}
+    .meta{margin:0;color:var(--muted);line-height:1.7}
+    .tagrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      padding:7px 11px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#0f1830;
+      color:#d8e4fa;
+      font-size:.84rem;
+      font-weight:600;
+    }
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:16px;
+      opacity:0;
+      transform:translateY(6px);
+      transition:.18s ease;
+    }
+    .card:hover .actions{opacity:1;transform:translateY(0)}
 
-    footer{padding:36px 0 60px;color:var(--muted);text-align:center}
+    .project-picker{position:relative;cursor:pointer;min-height:100%}
+    .project-picker .hover-grid{
+      position:absolute;
+      inset:0;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+      align-content:start;
+      padding:16px;
+      background:linear-gradient(180deg, rgba(7,13,24,.24), rgba(7,13,24,.84));
+      opacity:0;
+      pointer-events:none;
+      transition:.22s ease;
+      overflow:auto;
+    }
+    .project-picker .pick{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:52px;
+      text-align:center;
+      font-weight:800;
+      color:#0b1220;
+      background:var(--white);
+      border-radius:14px;
+      padding:12px 14px;
+      box-shadow:0 10px 20px rgba(0,0,0,.26);
+      transition:.18s ease;
+    }
+    .project-picker .pick:hover{transform:translateY(-1px);filter:brightness(.98)}
+    .project-picker:hover .hover-grid,
+    .project-picker:focus-within .hover-grid,
+    .project-picker.open .hover-grid{
+      opacity:1;
+      pointer-events:auto;
+    }
 
-    /* === Project picker hover/tap overlay (Eco-Call card) === */
-    .card.project-picker{ position:relative; cursor:pointer; overflow:hidden; }
-    .card.project-picker .hover-grid{
-      position:absolute; inset:0;
-      display:grid; grid-template-columns:1fr; gap:12px;
+
+    .hero-card{
       padding:14px;
-      background:linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.6));
-      opacity:0; pointer-events:none; transition:opacity .2s ease;
+      display:flex;
+      align-items:stretch;
     }
-    .card.project-picker .pick{
-      display:flex; align-items:center; justify-content:center;
-      text-align:center; font-weight:800;
-      background:#ffffff; color:#0b1220;
-      border-radius:14px; padding:14px 16px;
-      box-shadow:0 10px 24px rgba(0,0,0,.25);
-      text-decoration:none;
+    .hero-card .card{
+      width:100%;
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
     }
-    .card.project-picker .pick:hover{ filter:brightness(0.98); }
-    .card.project-picker:hover .hover-grid,
-    .card.project-picker:focus-within .hover-grid,
-    .card.project-picker.open .hover-grid{ 
-      opacity:1; pointer-events:auto;
+    .hero-live-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(96,165,250,.12);
+      color:#d6e8ff;
+      border:1px solid rgba(96,165,250,.18);
+      font-size:.85rem;
+      font-weight:700;
+      margin-bottom:10px;
     }
-    .card.project-picker:hover .thumb,
-    .card.project-picker.open .thumb{ transform:scale(1.03); }
+    .live-sites{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:14px;
+      margin-top:22px;
+    }
+    .site-card{
+      position:relative;
+      overflow:hidden;
+      min-height:220px;
+      padding:20px;
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.07);
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      box-shadow:var(--shadow);
+      transition:.22s ease;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+    .site-card::before{
+      content:"";
+      position:absolute;
+      inset:auto -40px -40px auto;
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(96,165,250,.24), transparent 70%);
+      pointer-events:none;
+    }
+    .site-card:hover{
+      transform:translateY(-4px);
+      border-color:rgba(96,165,250,.26);
+      box-shadow:var(--shadow-lg);
+    }
+    .site-card-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .site-dot{
+      width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      box-shadow:0 0 0 7px rgba(96,165,250,.10);
+      flex:0 0 auto;
+      margin-top:4px;
+    }
+    .site-label{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      font-size:.78rem;
+      color:#cffafe;
+      font-weight:800;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      margin-bottom:10px;
+    }
+    .site-card h3{
+      margin:0 0 8px;
+      font-size:1.08rem;
+      line-height:1.35;
+    }
+    .site-card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.65;
+      font-size:.94rem;
+    }
+    .site-card .site-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:16px;
+    }
+    .site-card .site-actions a{
+      min-height:42px;
+    }
 
-    /* Filter bar & project actions */
-    .filterbar{ display:flex; gap:10px; flex-wrap:wrap; margin:10px 0 18px; }
-    .fbtn{
-      border:1px solid var(--ring);
-      background:#0f1b31; color:var(--ink);
-      padding:8px 12px; border-radius:999px; cursor:pointer; font-weight:700;
+    .filterbar{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom:18px;
     }
-    .fbtn:hover{ filter:brightness(1.05) }
-    .fbtn.is-active{ border-color:var(--accent); box-shadow:0 0 0 2px rgba(124,174,42,.18) inset }
-    .actions{ display:flex; gap:8px; margin-top:12px; opacity:0; transform:translateY(6px); transition:.18s ease }
-    .card:hover .actions{ opacity:1; transform:translateY(0) }
-    .btn.small{ padding:8px 12px; border-radius:10px; font-size:.9rem }
-    @media (hover:none){
-      .actions{ opacity:1; transform:none }
+    .fbtn{
+      border:1px solid var(--line);
+      background:#0f1830;
+      color:var(--text);
+      padding:10px 14px;
+      border-radius:999px;
+      cursor:pointer;
+      font-weight:700;
+      transition:.18s ease;
+    }
+    .fbtn:hover{filter:brightness(1.06)}
+    .fbtn.is-active{
+      border-color:rgba(94,234,212,.60);
+      background:rgba(94,234,212,.10);
+      box-shadow:0 0 0 2px rgba(94,234,212,.12) inset;
+    }
+
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+    .skill-card{padding:22px}
+    .skill-card h3{margin:0 0 14px;font-size:1.02rem}
+    .skill-list{display:flex;flex-wrap:wrap;gap:10px}
+    .skill-pill{
+      display:inline-flex;
+      padding:10px 12px;
+      border-radius:12px;
+      background:#0f1830;
+      border:1px solid var(--line);
+      color:#d8e4fa;
+      font-size:.92rem;
+      font-weight:600;
+    }
+
+    .timeline{display:grid;gap:14px}
+    .item{
+      display:grid;
+      grid-template-columns:200px 1fr;
+      gap:16px;
+      padding:18px 20px;
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:18px;
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.015));
+    }
+    .when{color:#b4c4e3;font-weight:700}
+    .item p{margin:0;color:var(--muted);line-height:1.7}
+
+    .contact-card{padding:22px}
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:16px;
+    }
+    .contact-box{
+      padding:18px;
+      border-radius:16px;
+      background:#0f1830;
+      border:1px solid var(--line);
+    }
+    .contact-box strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:.96rem;
+      color:#dce8ff;
+    }
+    .contact-box a, .contact-box span{
+      color:var(--muted);
+      line-height:1.7;
+      word-break:break-word;
+    }
+
+    footer{
+      padding:24px 0 60px;
+      color:var(--muted);
+      text-align:center;
+    }
+    .footer-links{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:12px;
+    }
+    .footer-links a{
+      padding:10px 12px;
+      border-radius:10px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+    }
+
+    @media (max-width:1100px){
+      .live-sites{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:960px){
+      .hero-grid,.skills-grid,.contact-grid{grid-template-columns:1fr}
+      .live-sites{grid-template-columns:1fr}
+      .projects{grid-template-columns:repeat(1,1fr)}
+      .span-12,.span-8,.span-6,.span-4{grid-column:span 1}
+      .hero-points{grid-template-columns:1fr}
+      .item{grid-template-columns:1fr}
+    }
+    @media (max-width:760px){
+      .container{width:min(100% - 24px,1180px)}
+      .hero-copy{padding:24px}
+      .hero-card{padding:14px}
+      .links{display:none}
+      .section{padding:26px 0}
+      .actions{opacity:1;transform:none}
     }
   </style>
 </head>
 <body>
-  <header class="hero">
+  <div class="topbar">
     <div class="container nav">
       <div class="brand"><span class="dot"></span> Adem Wertani</div>
       <nav class="links">
-        <a href="#projects">Projects</a>
+        <a href="#live-sites">Live Sites</a>
         <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
         <a href="#cv">Resume</a>
@@ -134,57 +570,177 @@
         <a href="./CV_Adem_Wertani.pdf" target="_blank" rel="noopener">CV (PDF)</a>
       </nav>
     </div>
+  </div>
 
-    <div class="container lead">
-      <div>
-        <h1>Full-Stack (Web/Mobile) Developer</h1>
-        <p class="subtitle">I build efficient and elegant web solutions using Angular, Flutter, Spring Boot, Laravel, and PHP. Passionate about scalable design and automation with CI/CD.</p>
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">Full-Stack Developer • Web, APIs, Deployment</div>
+        <h1>Building <span class="accent">professional web platforms</span> with clean code, solid architecture, and reliable deployment.</h1>
+        <p class="subtitle">
+          I am Adem Wertani, a Full-Stack Developer focused on modern web applications, REST APIs, responsive interfaces,
+          and production deployment. I work across frontend and backend using Angular, Node.js, Laravel, Spring Boot,
+          PHP, SQL/NoSQL databases, Git workflows, and hosting platforms such as Hostinger.
+        </p>
+
+        <div class="hero-points">
+          <div class="hero-stat">
+            <strong>5+ live websites</strong>
+            <span>Business websites deployed and maintained online.</span>
+          </div>
+          <div class="hero-stat">
+            <strong>Full stack</strong>
+            <span>Frontend, backend, APIs, databases, and hosting.</span>
+          </div>
+          <div class="hero-stat">
+            <strong>Quality-driven</strong>
+            <span>Testing mindset from QA and maintainable delivery.</span>
+          </div>
+        </div>
+
         <div class="chiprow">
           <span class="chip">Angular</span>
-          <span class="chip">Flutter (Dart)</span>
-          <span class="chip">Spring Boot (Java)</span>
+          <span class="chip">Node.js</span>
           <span class="chip">Laravel · PHP</span>
-          <span class="chip">Docker · Jenkins · SonarQube</span>
+          <span class="chip">Spring Boot</span>
+          <span class="chip">MySQL · MongoDB</span>
+          <span class="chip">Hostinger</span>
+          <span class="chip">Docker · Jenkins</span>
         </div>
+
         <div class="cta">
-          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn primary" href="#live-sites">View Live Sites</a>
           <a class="btn ghost" href="./CV_Adem_Wertani.pdf" target="_blank" rel="noopener">Download CV</a>
         </div>
       </div>
 
-      <!-- Eco-Call card with 2 project links on hover/tap -->
-      <div>
-        <div class="card project-picker" tabindex="0" aria-label="Eco-Call projects">
-          <img class="thumb" src="img/ecocall-dashboard.png" alt="Eco-Call Thermal Insulation Websites"/>
-
-          <div class="hover-grid" aria-hidden="true">
-            <a class="pick" href="https://aisla-nova.es/" target="_blank" rel="noopener">🧱 Aisla Nova</a>
-            <a class="pick" href="https://franceexpertisolation.fr/" target="_blank" rel="noopener">🧱 France Expert Isolation</a>
+      <div class="hero-card">
+        <div class="card pad" aria-label="Hosted client websites highlight">
+          <div class="hero-live-badge">Live websites • Hosted on Hostinger</div>
+          <div class="title">Websites online and ready to visit</div>
+          <p class="meta">
+            I design, develop, fix, deploy, and maintain real business websites in production.
+            This section highlights the websites that visitors can open immediately.
+          </p>
+          <div class="tagrow">
+            <span class="tag">Laravel</span>
+            <span class="tag">PHP</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Hostinger</span>
+            <span class="tag">Maintenance</span>
           </div>
-
-          <div class="pad">
-            <div class="title">Eco-Call Thermal Insulation Websites</div>
-            <p class="meta">Creation of professional websites for insulation services using PHP, Laravel, and MySQL on Hostinger.</p>
-            <div class="tagrow">
-              <span class="tag">Laravel</span>
-              <span class="tag">PHP</span>
-              <span class="tag">MySQL</span>
-              <span class="tag">Hostinger</span>
-            </div>
+          <div class="actions" style="opacity:1;transform:none; margin-top:18px;">
+            <a class="btn small primary" href="https://callenergievert.com/" target="_blank" rel="noopener">Visit Featured Website</a>
+            <a class="btn small ghost" href="#live-sites">See All Live Sites</a>
           </div>
         </div>
       </div>
-      <!-- /Eco-Call -->
     </div>
   </header>
 
   <main>
-    <!-- PROJECTS -->
-    <section id="projects">
+    <section class="section" id="live-sites">
       <div class="container">
-        <h2 class="section-title">Projects</h2>
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Live Websites Hosted on Hostinger</h2>
+            <p class="section-note">These are real websites already online. I wanted them to be visible immediately so recruiters and visitors can open them in one click.</p>
+          </div>
+        </div>
 
-        <!-- Filter bar -->
+        <div class="live-sites">
+          <article class="site-card">
+            <div>
+              <div class="site-card-top">
+                <div>
+                  <div class="site-label">Live project</div>
+                  <h3>Aisla Nova</h3>
+                </div>
+                <span class="site-dot"></span>
+              </div>
+              <p>Business website focused on insulation services, delivered and maintained in production with a clean user journey.</p>
+            </div>
+            <div class="site-actions">
+              <a class="btn small primary" href="https://aisla-nova.es/" target="_blank" rel="noopener">Visit Site</a>
+            </div>
+          </article>
+
+          <article class="site-card">
+            <div>
+              <div class="site-card-top">
+                <div>
+                  <div class="site-label">Live project</div>
+                  <h3>Call Energie Vert</h3>
+                </div>
+                <span class="site-dot"></span>
+              </div>
+              <p>Professional business website with web integration, technical improvements, and live hosting management.</p>
+            </div>
+            <div class="site-actions">
+              <a class="btn small primary" href="https://callenergievert.com/" target="_blank" rel="noopener">Visit Site</a>
+            </div>
+          </article>
+
+          <article class="site-card">
+            <div>
+              <div class="site-card-top">
+                <div>
+                  <div class="site-label">Live project</div>
+                  <h3>Eco-Call</h3>
+                </div>
+                <span class="site-dot"></span>
+              </div>
+              <p>Corporate website deployed online with production support, content updates, and technical maintenance.</p>
+            </div>
+            <div class="site-actions">
+              <a class="btn small primary" href="https://www.eco-call.fr/" target="_blank" rel="noopener">Visit Site</a>
+            </div>
+          </article>
+
+          <article class="site-card">
+            <div>
+              <div class="site-card-top">
+                <div>
+                  <div class="site-label">Live project</div>
+                  <h3>France Expert Isolation</h3>
+                </div>
+                <span class="site-dot"></span>
+              </div>
+              <p>Production website for insulation services including hosting, technical fixes, and database-driven forms.</p>
+            </div>
+            <div class="site-actions">
+              <a class="btn small primary" href="https://franceexpertisolation.fr/" target="_blank" rel="noopener">Visit Site</a>
+            </div>
+          </article>
+
+          <article class="site-card">
+            <div>
+              <div class="site-card-top">
+                <div>
+                  <div class="site-label">Live project</div>
+                  <h3>Audit Vision</h3>
+                </div>
+                <span class="site-dot"></span>
+              </div>
+              <p>Professional online presence delivered with a strong emphasis on clarity, performance, and reliable hosting.</p>
+            </div>
+            <div class="site-actions">
+              <a class="btn small primary" href="https://auditvision.fr/" target="_blank" rel="noopener">Visit Site</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-note">A selection of real and academic projects covering business websites, web applications, mobile apps, and CI/CD workflows.</p>
+          </div>
+        </div>
+
         <div class="filterbar" role="tablist" aria-label="Project filters">
           <button class="fbtn is-active" data-filter="all" role="tab" aria-selected="true">All</button>
           <button class="fbtn" data-filter="web" role="tab" aria-selected="false">Web</button>
@@ -194,166 +750,122 @@
         </div>
 
         <div class="grid projects" id="projectsGrid">
-          <!-- Web -->
-          <article class="card span-6 proj" data-tags="web">
-            <img class="thumb" src="img/lowcode-platform.jpg" alt="Low-code Mobile Platform"/>
+          <article class="card span-12 proj" data-tags="web devops">
+            <img class="thumb" src="img/ecommerce.png" alt="Professional websites portfolio" />
             <div class="pad">
-              <div class="title">Low-code Mobile Platform</div>
-              <p class="meta">Tool to generate business mobile apps with minimal code.</p>
+              <div class="title">Professional Websites I Hosted</div>
+              <p class="meta">
+                A highlighted selection of real business websites that I developed, deployed, and maintained. They are online now and available for immediate review by recruiters, clients, and visitors.
+              </p>
+              <div class="tagrow">
+                <span class="tag">Laravel</span>
+                <span class="tag">PHP</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">Hostinger</span>
+                <span class="tag">Deployment</span>
+                <span class="tag">Production Support</span>
+              </div>
+              <div class="actions" style="opacity:1;transform:none;">
+                <a class="btn small primary" href="https://aisla-nova.es/" target="_blank" rel="noopener">Aisla Nova</a>
+                <a class="btn small ghost" href="https://callenergievert.com/" target="_blank" rel="noopener">Call Energie Vert</a>
+                <a class="btn small ghost" href="https://www.eco-call.fr/" target="_blank" rel="noopener">Eco-Call</a>
+                <a class="btn small ghost" href="https://franceexpertisolation.fr/" target="_blank" rel="noopener">France Expert Isolation</a>
+                <a class="btn small ghost" href="https://auditvision.fr/" target="_blank" rel="noopener">Audit Vision</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card span-6 proj" data-tags="web mobile">
+            <img class="thumb" src="img/lowcode-platform.jpg" alt="Low-code mobile platform" />
+            <div class="pad">
+              <div class="title">Low-Code Mobile Platform</div>
+              <p class="meta">Platform designed to generate business mobile applications with reduced manual development effort and integrated backend logic.</p>
               <div class="tagrow">
                 <span class="tag">Angular</span>
                 <span class="tag">Flutter</span>
                 <span class="tag">Spring Boot</span>
-              </div>
-              <div class="actions">
-                <a class="btn small" href="#" target="_blank" rel="noopener">Live</a>
-                <a class="btn small ghost" href="#" target="_blank" rel="noopener">Code</a>
+                <span class="tag">UI/UX</span>
               </div>
             </div>
           </article>
 
-          <!-- Web -->
-          <article class="card span-4 proj" data-tags="web">
-            <img class="thumb" src="img/ecommerce.png" alt="E-commerce Web App"/>
-            <div class="pad">
-              <div class="title">E-commerce Web App</div>
-              <p class="meta">Storefront with product catalog, cart, and checkout.</p>
-              <div class="tagrow">
-                <span class="tag">HTML/CSS/JS</span>
-                <span class="tag">PHP</span>
-                <span class="tag">MySQL</span>
-              </div>
-              <div class="actions">
-                <a class="btn small" href="#" target="_blank" rel="noopener">Live</a>
-                <a class="btn small ghost" href="#" target="_blank" rel="noopener">Code</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Mobile (Android Studio) — existing but corrected -->
-          <article class="card span-4 proj" data-tags="mobile">
-            <img class="thumb" src="img/blockchain-app.png" alt="Blockchain Learning App (Android)"/>
-            <div class="pad">
-              <div class="title">Blockchain Learning App</div>
-              <p class="meta">Android app to learn blockchain fundamentals.</p>
-              <div class="tagrow">
-                <span class="tag">Android Studio</span>
-                <span class="tag">Kotlin</span>
-                <span class="tag">REST API</span>
-              </div>
-              <div class="actions">
-                <a class="btn small" href="#" target="_blank" rel="noopener">Live</a>
-                <a class="btn small ghost" href="#" target="_blank" rel="noopener">Code</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Mobile (Flutter + Node.js + MongoDB) — Delivery -->
           <article class="card span-6 proj" data-tags="mobile">
-            <img class="thumb" src="img/delivery-app.jpg" alt="Delivery App (Flutter + Node.js + MongoDB)"/>
+            <img class="thumb" src="img/delivery-app.jpg" alt="Delivery app" />
             <div class="pad">
               <div class="title">Delivery App</div>
-              <p class="meta">Order management, real-time tracking, and push notifications.</p>
+              <p class="meta">Mobile application with order handling, authentication, real-time tracking, and notifications for delivery workflows.</p>
               <div class="tagrow">
                 <span class="tag">Flutter</span>
                 <span class="tag">Node.js</span>
                 <span class="tag">MongoDB</span>
                 <span class="tag">JWT</span>
               </div>
-              <div class="actions">
-                <a class="btn small" href="#" target="_blank" rel="noopener">Live</a>
-                <a class="btn small ghost" href="#" target="_blank" rel="noopener">Code</a>
+            </div>
+          </article>
+
+          <article class="card span-4 proj" data-tags="mobile">
+            <img class="thumb" src="img/blockchain-app.png" alt="Blockchain learning app" />
+            <div class="pad">
+              <div class="title">Blockchain Learning App</div>
+              <p class="meta">Educational mobile app built to simplify blockchain concepts through a structured and accessible user experience.</p>
+              <div class="tagrow">
+                <span class="tag">Android Studio</span>
+                <span class="tag">Kotlin</span>
+                <span class="tag">REST API</span>
               </div>
             </div>
           </article>
 
-          <!-- Web (Symfony 4) — Gamers platform -->
-          <article class="card span-6 proj" data-tags="web">
-            <img class="thumb" src="img/gamers-platform.png" alt="Gamers Platform (Symfony 4)"/>
+          <article class="card span-4 proj" data-tags="web">
+            <img class="thumb" src="img/gamers-platform.png" alt="Gamers platform" />
             <div class="pad">
               <div class="title">Gamers Platform</div>
-              <p class="meta">Profiles, matchmaking, tournaments, and leaderboards.</p>
+              <p class="meta">Community web platform featuring profiles, tournament management, matchmaking, and ranking systems.</p>
               <div class="tagrow">
-                <span class="tag">Symfony 4</span>
+                <span class="tag">Symfony</span>
                 <span class="tag">Twig</span>
                 <span class="tag">MySQL</span>
               </div>
-              <div class="actions">
-                <a class="btn small" href="#" target="_blank" rel="noopener">Live</a>
-                <a class="btn small ghost" href="#" target="_blank" rel="noopener">Code</a>
-              </div>
             </div>
           </article>
 
-          <!-- Web (.NET) — Student portal -->
-          <article class="card span-6 proj" data-tags="web">
-            <img class="thumb" src="img/student-portal.png" alt="Student Portal (.NET)"/>
+          <article class="card span-4 proj" data-tags="web">
+            <img class="thumb" src="img/student-portal.png" alt="Student portal" />
             <div class="pad">
               <div class="title">Student Portal</div>
-              <p class="meta">Courses, grades, attendance, and notifications.</p>
+              <p class="meta">Academic management portal with course follow-up, grades, attendance, and notification features.</p>
               <div class="tagrow">
                 <span class="tag">ASP.NET Core</span>
                 <span class="tag">Entity Framework</span>
                 <span class="tag">SQL Server</span>
               </div>
-              <div class="actions">
-                <a class="btn small" href="#" target="_blank" rel="noopener">Live</a>
-                <a class="btn small ghost" href="#" target="_blank" rel="noopener">Code</a>
-              </div>
             </div>
           </article>
 
-          <!-- Games (Unity) — Space Shooter -->
-          <article class="card span-4 proj" data-tags="games">
-            <img class="thumb" src="img/unity-space-shooter.png" alt="Unity Space Shooter"/>
+          <article class="card span-6 proj" data-tags="games mobile">
+            <img class="thumb" src="img/unity-space-shooter.png" alt="Unity space shooter" />
             <div class="pad">
-              <div class="title">Unity – Space Shooter</div>
-              <p class="meta">2D arcade shooter with power-ups and waves.</p>
+              <div class="title">Unity Space Shooter</div>
+              <p class="meta">Arcade game project with power-ups, enemy waves, and gameplay balancing for mobile or WebGL deployment.</p>
               <div class="tagrow">
                 <span class="tag">Unity</span>
                 <span class="tag">C#</span>
-                <span class="tag">WebGL/Android</span>
-              </div>
-              <div class="actions">
-                <a class="btn small" href="#" target="_blank" rel="noopener">Live</a>
-                <a class="btn small ghost" href="#" target="_blank" rel="noopener">Code</a>
+                <span class="tag">Gameplay</span>
               </div>
             </div>
           </article>
 
-          <!-- Games (Unity) — Endless Runner -->
-          <article class="card span-4 proj" data-tags="games">
-            <img class="thumb" src="img/unity-endless-runner.png" alt="Unity Endless Runner"/>
+          <article class="card span-6 proj" data-tags="devops web">
+            <img class="thumb" src="img/cicd-pipeline.png" alt="CI/CD pipeline" />
             <div class="pad">
-              <div class="title">Unity – Endless Runner</div>
-              <p class="meta">Procedural track, obstacles, coins, and score system.</p>
-              <div class="tagrow">
-                <span class="tag">Unity</span>
-                <span class="tag">C#</span>
-                <span class="tag">WebGL/Android</span>
-              </div>
-              <div class="actions">
-                <a class="btn small" href="#" target="_blank" rel="noopener">Live</a>
-                <a class="btn small ghost" href="#" target="_blank" rel="noopener">Code</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- DevOps -->
-          <article class="card span-12 proj" data-tags="devops">
-            <img class="thumb" src="img/cicd-pipeline.png" alt="CI/CD Pipeline"/>
-            <div class="pad">
-              <div class="title">CI/CD for Spring Boot + Flutter</div>
-              <p class="meta">Dockerized pipelines with Jenkins, JUnit/Mockito, and SonarQube quality gates.</p>
+              <div class="title">CI/CD Workflow for Web & Mobile Projects</div>
+              <p class="meta">Continuous integration pipeline with Docker, Jenkins, tests, and code quality gates to improve delivery reliability.</p>
               <div class="tagrow">
                 <span class="tag">Docker</span>
                 <span class="tag">Jenkins</span>
-                <span class="tag">JUnit · Mockito</span>
+                <span class="tag">JUnit</span>
+                <span class="tag">Mockito</span>
                 <span class="tag">SonarQube</span>
-              </div>
-              <div class="actions">
-                <a class="btn small" href="#" target="_blank" rel="noopener">Live</a>
-                <a class="btn small ghost" href="#" target="_blank" rel="noopener">Code</a>
               </div>
             </div>
           </article>
@@ -361,68 +873,184 @@
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience">
+    <section class="section" id="skills">
       <div class="container">
-        <h2 class="section-title">Experience & Education</h2>
-        <p class="meta">Note: experiences before 2025 were internships.</p>
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Core Skills</h2>
+            <p class="section-note">Technical stack aligned with my experience in full-stack development, testing, integration, and deployment.</p>
+          </div>
+        </div>
+
+        <div class="skills-grid">
+          <div class="card skill-card">
+            <h3>Frontend & UI</h3>
+            <div class="skill-list">
+              <span class="skill-pill">Angular</span>
+              <span class="skill-pill">React</span>
+              <span class="skill-pill">Vue.js</span>
+              <span class="skill-pill">HTML5</span>
+              <span class="skill-pill">CSS3</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">TypeScript</span>
+              <span class="skill-pill">Bootstrap</span>
+              <span class="skill-pill">Tailwind</span>
+            </div>
+          </div>
+
+          <div class="card skill-card">
+            <h3>Backend & Data</h3>
+            <div class="skill-list">
+              <span class="skill-pill">Node.js</span>
+              <span class="skill-pill">Laravel</span>
+              <span class="skill-pill">Spring Boot</span>
+              <span class="skill-pill">PHP</span>
+              <span class="skill-pill">Java</span>
+              <span class="skill-pill">REST APIs</span>
+              <span class="skill-pill">MySQL</span>
+              <span class="skill-pill">MongoDB</span>
+              <span class="skill-pill">PostgreSQL</span>
+            </div>
+          </div>
+
+          <div class="card skill-card">
+            <h3>Tools, Quality & Deployment</h3>
+            <div class="skill-list">
+              <span class="skill-pill">Git & GitHub</span>
+              <span class="skill-pill">Docker</span>
+              <span class="skill-pill">Jenkins</span>
+              <span class="skill-pill">Postman</span>
+              <span class="skill-pill">SonarQube</span>
+              <span class="skill-pill">JUnit</span>
+              <span class="skill-pill">Mockito</span>
+              <span class="skill-pill">Hostinger</span>
+              <span class="skill-pill">CI/CD</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Experience & Education</h2>
+            <p class="section-note">Professional experience and internships across full-stack development, QA, mobile apps, and backend services.</p>
+          </div>
+        </div>
+
         <div class="timeline">
           <div class="item">
-            <div class="when">2025 — Present — Eco-Call</div>
-            <div><strong>Full-stack Developer (Laravel/PHP)</strong> — Building and maintaining websites for thermal insulation services using Laravel, PHP, MySQL, and Hostinger.</div>
+            <div class="when">2025 — Present</div>
+            <div>
+              <strong>Full-Stack Developer — Call Energie Vert</strong>
+              <p>Development of web applications and business websites using Laravel, Spring Boot, Node.js, Angular, responsive frontend integration, technical support, and code maintenance.</p>
+            </div>
           </div>
+
           <div class="item">
-            <div class="when">2025 — Weve Digital</div>
-            <div><strong>QA Engineer</strong> — Automation with Postman, testing, bug tracking, and documentation.</div>
+            <div class="when">2025</div>
+            <div>
+              <strong>QA Engineer — Weve Digital</strong>
+              <p>Test case design and execution, Postman-based test automation, bug tracking with Jira, and collaboration with development and product teams.</p>
+            </div>
           </div>
+
           <div class="item">
-            <div class="when">2024 — Kids Protect — Internship</div>
-            <div><strong>Mobile Developer</strong> — Developed features and API integrations using Flutter.</div>
+            <div class="when">2024</div>
+            <div>
+              <strong>Development Internship — Kian Technology</strong>
+              <p>Worked on a low-code platform for mobile app generation with Angular, Flutter, and Spring Boot integration.</p>
+            </div>
           </div>
+
           <div class="item">
-            <div class="when">2023 — Kian Technology — Internship</div>
-            <div><strong>Full-stack Developer</strong> — Low-code mobile builder (Angular, Flutter, Spring Boot); UI/UX and CI/CD.</div>
+            <div class="when">2023</div>
+            <div>
+              <strong>Mobile Development Internship — Kids Protect</strong>
+              <p>Mobile feature development, backlog follow-up, and functional analysis within an Agile workflow.</p>
+            </div>
           </div>
+
           <div class="item">
-            <div class="when">2022 — Itserv — Internship</div>
-            <div><strong>Back-end Developer</strong> — Built APIs with Java/Spring Boot; integration tests.</div>
+            <div class="when">2022</div>
+            <div>
+              <strong>Back-End Development Internship — Itserv</strong>
+              <p>Business service development with Java and Spring Boot, plus unit and integration testing.</p>
+            </div>
           </div>
+
           <div class="item">
-            <div class="when">2021 — Tunisie Télécom — Internship</div>
-            <div><strong>Web Developer</strong> — Created and tested web UI and user flows.</div>
+            <div class="when">2021</div>
+            <div>
+              <strong>Web Development Internship — Tunisie Télécom</strong>
+              <p>Creation and integration of user interfaces with frontend technologies and browser testing.</p>
+            </div>
           </div>
+
           <div class="item">
-            <div class="when">2019–2024 — ESPRIT</div>
-            <div><strong>National Engineering Diploma</strong> — Software Engineering.</div>
+            <div class="when">2019 — 2024</div>
+            <div>
+              <strong>National Engineering Diploma — ESPRIT</strong>
+              <p>Software engineering background with practical work in modern web development, software architecture, APIs, and testing.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- RESUME (PDF preview) -->
-    <section id="cv">
+    <section class="section" id="cv">
       <div class="container">
-        <h2 class="section-title">Resume</h2>
-        <div class="card" style="padding:0; overflow:hidden;">
-          <embed src="CV_Adem_Wertani.pdf#toolbar=1&navpanes=0&scrollbar=1" type="application/pdf" width="100%" height="800px" />
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Resume</h2>
+            <p class="section-note">Embedded version of my resume for quick viewing and download.</p>
+          </div>
         </div>
-        <p class="meta" style="margin-top:10px">
-          If the preview doesn’t load, <a href="CV_Adem_Wertani.pdf" target="_blank" rel="noopener">open the PDF</a>.
-        </p>
+
+        <div class="card" style="padding:0;overflow:hidden;">
+          <embed src="CV_Adem_Wertani.pdf#toolbar=1&navpanes=0&scrollbar=1" type="application/pdf" width="100%" height="820px" />
+        </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact">
+    <section class="section" id="contact">
       <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <div class="card pad">
-          <p>Phone: <a href="tel:+21651144181">+216 51 144 181</a></p>
-          <p>Email: <a href="mailto:adem.wartani100@gmail.com">adem.wartani100@gmail.com</a></p>
-          <p>Location: Ariana, Tunisia</p>
-          <p>LinkedIn: <a href="https://www.linkedin.com/in/adem-wertani-548646225" target="_blank">linkedin.com/in/adem-wertani-548646225</a></p>
-          <p>GitHub: <a href="https://github.com/ademwertani" target="_blank">github.com/ademwertani</a></p>
-          <p>Resume: <a href="CV_Adem_Wertani.pdf" target="_blank" rel="noopener">Download CV (PDF)</a></p>
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Contact</h2>
+            <p class="section-note">Available for full-stack development opportunities, freelance web projects, and technical collaboration.</p>
+          </div>
+        </div>
+
+        <div class="card contact-card">
+          <div class="contact-grid">
+            <div class="contact-box">
+              <strong>Phone</strong>
+              <a href="tel:+21651144181">+216 51 144 181</a>
+            </div>
+            <div class="contact-box">
+              <strong>Email</strong>
+              <a href="mailto:adem.wartani100@gmail.com">adem.wartani100@gmail.com</a>
+            </div>
+            <div class="contact-box">
+              <strong>LinkedIn</strong>
+              <a href="https://www.linkedin.com/in/adem-wertani-548646225" target="_blank" rel="noopener">linkedin.com/in/adem-wertani-548646225</a>
+            </div>
+            <div class="contact-box">
+              <strong>GitHub</strong>
+              <a href="https://github.com/ademwertani" target="_blank" rel="noopener">github.com/ademwertani</a>
+            </div>
+            <div class="contact-box">
+              <strong>Location</strong>
+              <span>Ariana, Tunisia</span>
+            </div>
+            <div class="contact-box">
+              <strong>Resume</strong>
+              <a href="CV_Adem_Wertani.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -430,47 +1058,52 @@
 
   <footer>
     <div class="container">
-      <div class="links">
+      <div class="footer-links">
+        <a href="#live-sites">Live Sites</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
         <a href="#cv">Resume</a>
         <a href="#contact">Contact</a>
       </div>
-      <p style="margin-top:12px">© <span id="year"></span> Adem Wertani — All rights reserved.</p>
+      <p>© <span id="year"></span> Adem Wertani — Full-Stack Developer Portfolio</p>
     </div>
   </footer>
 
   <script>
-    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Mobile tap to toggle Eco-Call overlay
-    document.querySelectorAll('.project-picker').forEach((card)=>{
-      card.addEventListener('click', (e)=>{
-        if (e.target.closest('a')) return; // allow link clicks
+    document.querySelectorAll('.project-picker').forEach((card) => {
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('a')) return;
         card.classList.toggle('open');
       });
     });
 
-    // Project filters
     (function(){
       const buttons = document.querySelectorAll('.fbtn');
       const cards = document.querySelectorAll('.proj');
+
       function applyFilter(key){
-        cards.forEach(c=>{
-          const tags = (c.getAttribute('data-tags')||'').toLowerCase();
-          const show = key==='all' || tags.includes(key);
-          c.style.display = show ? '' : 'none';
+        cards.forEach(card => {
+          const tags = (card.getAttribute('data-tags') || '').toLowerCase();
+          const show = key === 'all' || tags.includes(key);
+          card.style.display = show ? '' : 'none';
         });
       }
-      buttons.forEach(btn=>{
-        btn.addEventListener('click', ()=>{
-          buttons.forEach(b=>b.classList.remove('is-active'));
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          buttons.forEach(b => {
+            b.classList.remove('is-active');
+            b.setAttribute('aria-selected', 'false');
+          });
           btn.classList.add('is-active');
+          btn.setAttribute('aria-selected', 'true');
           applyFilter(btn.dataset.filter);
         });
       });
+
       applyFilter('all');
     })();
   </script>
