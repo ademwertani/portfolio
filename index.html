@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -71,13 +72,17 @@ footer{padding:28px 0 45px}.footer-inner{display:flex;justify-content:space-betw
 @media(max-width:760px){.container{width:calc(100% - 34px)}.nav{min-height:68px}.mobile-toggle{display:block}.nav-links{display:none;position:absolute;top:67px;left:0;right:0;padding:20px;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch}.nav-links.open{display:flex}.nav-links a{padding:7px}.hero{padding:74px 0}.hero-layout{grid-template-columns:1fr;gap:50px}.hero h1{font-size:clamp(47px,11vw,70px)}.profile-panel{min-height:390px;padding:25px;box-shadow:9px 9px 0 #eaede4}.section{padding:68px 0}.section-header{grid-template-columns:1fr;gap:16px}.projects-grid{gap:15px}.project-card,.project-card.large{grid-column:span 12}.skills-grid,.contact-grid{grid-template-columns:1fr}.live-grid{grid-template-columns:1fr}.timeline-item{display:block}.timeline-date{padding:0 0 8px}.resume-frame{height:550px}.footer-inner{align-items:flex-start;flex-direction:column}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 </style>
-</head>
+<style>
+/* Clickable portfolio websites */
+.live-grid a.site-card{color:inherit;text-decoration:none;cursor:pointer;min-width:0}
+.live-grid a.site-card:focus-visible{outline:3px solid #365943;outline-offset:4px}
+.live-grid a.site-card:hover .arrow-btn,.live-grid a.site-card:focus-visible .arrow-btn{background:#365943;color:#fff;border-color:#365943;transform:translate(2px,-2px)}
+.live-grid .arrow-btn{transition:background .2s,color .2s,transform .2s}
+</style></head>
 <body>
 <!-- =========================================================
        BACKGROUND
   ========================================================== -->
-
-
 <!-- =========================================================
        NAVIGATION
   ========================================================== -->
@@ -138,15 +143,11 @@ footer{padding:28px 0 45px}.footer-inner{display:flex;justify-content:space-betw
 </div>
 <div class="live-grid">
 <!-- Aisla Nova -->
-<article class="site-card reveal">
+<a aria-label="Visit Aisla Nova (opens in a new tab)" class="site-card reveal" href="https://aisla-nova.es/" rel="noopener noreferrer" target="_blank">
 <div>
 <div class="site-top">
-<span class="site-number">
-                  01
-                </span>
-<span class="site-status">
-                  Live
-                </span>
+<span class="site-number">01</span>
+<span class="site-status">Visit website</span>
 </div>
 <h3>
                 Aisla Nova
@@ -161,21 +162,17 @@ footer{padding:28px 0 45px}.footer-inner{display:flex;justify-content:space-betw
 <span class="site-url">
                 aisla-nova.es
               </span>
-<a aria-label="Visit Aisla Nova" class="arrow-btn" href="https://aisla-nova.es/" rel="noopener" target="_blank">
+<span aria-hidden="true" class="arrow-btn">
 <i class="fa-solid fa-arrow-up-right"></i>
-</a>
+</span>
 </div>
-</article>
+</a>
 <!-- Call Energie Vert -->
-<article class="site-card reveal reveal-delay-1">
+<a aria-label="Visit Call Energie Vert (opens in a new tab)" class="site-card reveal reveal-delay-1" href="https://callenergievert.com/" rel="noopener noreferrer" target="_blank">
 <div>
 <div class="site-top">
-<span class="site-number">
-                  02
-                </span>
-<span class="site-status">
-                  Live
-                </span>
+<span class="site-number">02</span>
+<span class="site-status">Visit website</span>
 </div>
 <h3>
                 Call Energie Vert
@@ -189,21 +186,17 @@ footer{padding:28px 0 45px}.footer-inner{display:flex;justify-content:space-betw
 <span class="site-url">
                 callenergievert.com
               </span>
-<a aria-label="Visit Call Energie Vert" class="arrow-btn" href="https://callenergievert.com/" rel="noopener" target="_blank">
+<span aria-hidden="true" class="arrow-btn">
 <i class="fa-solid fa-arrow-up-right"></i>
-</a>
+</span>
 </div>
-</article>
+</a>
 <!-- Eco-Call -->
-<article class="site-card reveal reveal-delay-2">
+<a aria-label="Visit Eco-Call (opens in a new tab)" class="site-card reveal reveal-delay-2" href="https://www.eco-call.fr/" rel="noopener noreferrer" target="_blank">
 <div>
 <div class="site-top">
-<span class="site-number">
-                  03
-                </span>
-<span class="site-status">
-                  Live
-                </span>
+<span class="site-number">03</span>
+<span class="site-status">Visit website</span>
 </div>
 <h3>
                 Eco-Call
@@ -217,21 +210,17 @@ footer{padding:28px 0 45px}.footer-inner{display:flex;justify-content:space-betw
 <span class="site-url">
                 eco-call.fr
               </span>
-<a aria-label="Visit Eco-Call" class="arrow-btn" href="https://www.eco-call.fr/" rel="noopener" target="_blank">
+<span aria-hidden="true" class="arrow-btn">
 <i class="fa-solid fa-arrow-up-right"></i>
-</a>
+</span>
 </div>
-</article>
+</a>
 <!-- France Expert Isolation -->
-<article class="site-card reveal reveal-delay-1">
+<a aria-label="Visit France Expert Isolation (opens in a new tab)" class="site-card reveal reveal-delay-1" href="https://franceexpertisolation.fr/" rel="noopener noreferrer" target="_blank">
 <div>
 <div class="site-top">
-<span class="site-number">
-                  04
-                </span>
-<span class="site-status">
-                  Live
-                </span>
+<span class="site-number">04</span>
+<span class="site-status">Visit website</span>
 </div>
 <h3>
                 France Expert Isolation
@@ -245,21 +234,17 @@ footer{padding:28px 0 45px}.footer-inner{display:flex;justify-content:space-betw
 <span class="site-url">
                 franceexpertisolation.fr
               </span>
-<a aria-label="Visit France Expert Isolation" class="arrow-btn" href="https://franceexpertisolation.fr/" rel="noopener" target="_blank">
+<span aria-hidden="true" class="arrow-btn">
 <i class="fa-solid fa-arrow-up-right"></i>
-</a>
+</span>
 </div>
-</article>
+</a>
 <!-- Audit Vision -->
-<article class="site-card reveal reveal-delay-2">
+<a aria-label="Visit Audit Vision (opens in a new tab)" class="site-card reveal reveal-delay-2" href="https://auditvision.fr/" rel="noopener noreferrer" target="_blank">
 <div>
 <div class="site-top">
-<span class="site-number">
-                  05
-                </span>
-<span class="site-status">
-                  Live
-                </span>
+<span class="site-number">05</span>
+<span class="site-status">Visit website</span>
 </div>
 <h3>
                 Audit Vision
@@ -273,12 +258,12 @@ footer{padding:28px 0 45px}.footer-inner{display:flex;justify-content:space-betw
 <span class="site-url">
                 auditvision.fr
               </span>
-<a aria-label="Visit Audit Vision" class="arrow-btn" href="https://auditvision.fr/" rel="noopener" target="_blank">
+<span aria-hidden="true" class="arrow-btn">
 <i class="fa-solid fa-arrow-up-right"></i>
+</span>
+</div>
 </a>
-</div>
-</article>
-</div>
+<a aria-label="Visit CryptoInfo (opens in a new tab)" class="site-card reveal" href="https://cryptoinfo.business/" rel="noopener noreferrer" target="_blank"><div><div class="site-top"><span class="site-number">06</span><span class="site-status">Visit website</span></div><h3>CryptoInfo</h3><p>Live cryptocurrency prices, interactive charts, market data and crypto news. Built with Laravel and real-time APIs.</p></div><div class="site-footer"><span class="site-url">cryptoinfo.business</span><span aria-hidden="true" class="arrow-btn"><i class="fa-solid fa-arrow-up-right"></i></span></div></a><a aria-label="Visit Le Four &amp; La Pelle (opens in a new tab)" class="site-card reveal" href="https://lefouretlapellemenu.fr/" rel="noopener noreferrer" target="_blank"><div><div class="site-top"><span class="site-number">07</span><span class="site-status">Visit website</span></div><h3>Le Four &amp; La Pelle</h3><p>A digital menu and online presence for a pastry business, designed for clear and easy browsing.</p></div><div class="site-footer"><span class="site-url">lefouretlapellemenu.fr</span><span aria-hidden="true" class="arrow-btn"><i class="fa-solid fa-arrow-up-right"></i></span></div></a></div>
 </div>
 </section>
 <!-- =======================================================
@@ -315,108 +300,11 @@ footer{padding:28px 0 45px}.footer-inner{display:flex;justify-content:space-betw
 <!-- =================================================
                CRYPTOINFO
           ================================================== -->
-<article class="project-card large featured-project reveal" data-tags="web devops">
-<div class="project-image">
-<span class="project-number">
-                01 / LIVE
-              </span>
-<img alt="CryptoInfo platform" loading="lazy" src="img/cryptoinfo.png"/>
-</div>
-<div class="project-content">
-<div class="live-badge">
-                Live Production Platform
-              </div>
-<h3 class="project-title">
-                CryptoInfo
-              </h3>
-<p class="project-description">
-                A production crypto information platform providing
-                live cryptocurrency prices, market statistics, charts,
-                news, trending assets, market insights, and a modern
-                responsive experience for crypto users.
-              </p>
-<div class="tags">
-<span class="tag">
-                  Laravel
-                </span>
-<span class="tag">
-                  PHP
-                </span>
-<span class="tag">
-                  MySQL
-                </span>
-<span class="tag">
-                  Tailwind
-                </span>
-<span class="tag">
-                  Vite
-                </span>
-<span class="tag">
-                  APIs
-                </span>
-<span class="tag">
-                  WebSocket
-                </span>
-<span class="tag">
-                  Filament
-                </span>
-</div>
-<div class="project-links">
-<a class="btn btn-primary btn-small" href="https://cryptoinfo.business/" rel="noopener" target="_blank">
-                  Visit Website
-                  <i class="fa-solid fa-arrow-up-right"></i>
-</a>
-</div>
-</div>
-</article>
+
 <!-- =================================================
                LE FOUR & LA PELLE
           ================================================== -->
-<article class="project-card large featured-project reveal reveal-delay-1" data-tags="web">
-<div class="project-image">
-<span class="project-number">
-                02 / LIVE
-              </span>
-<img alt="Le Four &amp; La Pelle website" loading="lazy" src="img/lefouretlapelle.png"/>
-</div>
-<div class="project-content">
-<div class="live-badge">
-                Live Website
-              </div>
-<h3 class="project-title">
-                Le Four &amp; La Pelle
-              </h3>
-<p class="project-description">
-                A professional digital menu and online presence for
-                a pastry business, designed to present products clearly
-                and provide visitors with a simple and attractive
-                browsing experience.
-              </p>
-<div class="tags">
-<span class="tag">
-                  Web Development
-                </span>
-<span class="tag">
-                  Responsive Design
-                </span>
-<span class="tag">
-                  Digital Menu
-                </span>
-<span class="tag">
-                  UI/UX
-                </span>
-<span class="tag">
-                  Production
-                </span>
-</div>
-<div class="project-links">
-<a class="btn btn-primary btn-small" href="https://lefouretlapellemenu.fr/" rel="noopener" target="_blank">
-                  Visit Website
-                  <i class="fa-solid fa-arrow-up-right"></i>
-</a>
-</div>
-</div>
-</article>
+
 <!-- =================================================
                PROFESSIONAL WEBSITES
           ================================================== -->
