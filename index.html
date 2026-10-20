@@ -78,6 +78,10 @@ footer{padding:28px 0 45px}.footer-inner{display:flex;justify-content:space-betw
 .live-grid a.site-card:focus-visible{outline:3px solid #365943;outline-offset:4px}
 .live-grid a.site-card:hover .arrow-btn,.live-grid a.site-card:focus-visible .arrow-btn{background:#365943;color:#fff;border-color:#365943;transform:translate(2px,-2px)}
 .live-grid .arrow-btn{transition:background .2s,color .2s,transform .2s}
+</style><style>
+.workflow-note{font-size:12px;color:var(--muted);margin:26px 0 0;max-width:760px;line-height:1.8}
+.project-card .tags{align-content:flex-start}
+.project-card .project-description{margin-bottom:8px}
 </style></head>
 <body>
 <!-- =========================================================
@@ -271,277 +275,41 @@ footer{padding:28px 0 45px}.footer-inner{display:flex;justify-content:space-betw
     ======================================================== -->
 <section class="section" id="projects">
 <div class="container">
-<div class="section-header reveal">
-<div>
-<div class="section-kicker">02 / SELECTED WORK</div>
-<h2 class="section-title">Work, not just mockups.</h2>
-</div>
-<p class="section-note">A mix of practical, client-facing and technical projects.</p>
-</div>
-<!-- FILTERS -->
-<div class="filterbar reveal">
-<button class="filter-btn active" data-filter="all">
-            All
-          </button>
-<button class="filter-btn" data-filter="web">
-            Web
-          </button>
-<button class="filter-btn" data-filter="mobile">
-            Mobile
-          </button>
-<button class="filter-btn" data-filter="devops">
-            DevOps
-          </button>
-<button class="filter-btn" data-filter="games">
-            Games
-          </button>
+<div class="section-header reveal"><div><div class="section-kicker">02 / FULL-STACK WORKFLOW</div><h2 class="section-title">From idea to production.</h2></div><p class="section-note">The key responsibilities across a full-stack development lifecycle — from understanding the requirements to building, testing, deploying and maintaining an application.</p></div>
+<div class="filterbar reveal" aria-label="Filter development workflow">
+<button type="button" class="filter-btn active" data-filter="all">All stages</button>
+<button type="button" class="filter-btn" data-filter="planning">Planning &amp; Design</button>
+<button type="button" class="filter-btn" data-filter="backend">Backend &amp; Data</button>
+<button type="button" class="filter-btn" data-filter="frontend">Frontend</button>
+<button type="button" class="filter-btn" data-filter="quality">Quality</button>
+<button type="button" class="filter-btn" data-filter="delivery">Deployment &amp; Support</button>
 </div>
 <div class="projects-grid" id="projectsGrid">
-<!-- =================================================
-               CRYPTOINFO
-          ================================================== -->
-
-<!-- =================================================
-               LE FOUR & LA PELLE
-          ================================================== -->
-
-<!-- =================================================
-               PROFESSIONAL WEBSITES
-          ================================================== -->
-<article class="project-card reveal" data-tags="web">
-<div class="project-image">
-<span class="project-number">
-                03
-              </span>
-<img alt="Gamers platform" loading="lazy" src="img/gamers-platform.png"/>
-</div>
-<div class="project-content">
-<h3 class="project-title">
-                Gamers Platform
-              </h3>
-<p class="project-description">
-                Community web platform featuring profiles,
-                tournament management, matchmaking, and ranking
-                systems.
-              </p>
-<div class="tags">
-<span class="tag">Symfony</span>
-<span class="tag">Twig</span>
-<span class="tag">MySQL</span>
-</div>
-</div>
-</article>
-<!-- =================================================
-               LOW CODE
-          ================================================== -->
-<article class="project-card reveal" data-tags="web mobile">
-<div class="project-image">
-<span class="project-number">
-                04
-              </span>
-<img alt="Low-code mobile platform" loading="lazy" src="img/lowcode-platform.jpg"/>
-</div>
-<div class="project-content">
-<h3 class="project-title">
-                Low-Code Mobile Platform
-              </h3>
-<p class="project-description">
-                Platform designed to generate business mobile
-                applications with reduced manual development effort
-                and integrated backend logic.
-              </p>
-<div class="tags">
-<span class="tag">Angular</span>
-<span class="tag">Flutter</span>
-<span class="tag">Spring Boot</span>
-<span class="tag">UI/UX</span>
-</div>
-</div>
-</article>
-<!-- =================================================
-               DELIVERY
-          ================================================== -->
-<article class="project-card reveal" data-tags="mobile">
-<div class="project-image">
-<span class="project-number">
-                05
-              </span>
-<img alt="Delivery app" loading="lazy" src="img/delivery-app.jpg"/>
-</div>
-<div class="project-content">
-<h3 class="project-title">
-                Delivery App
-              </h3>
-<p class="project-description">
-                Mobile application with order handling,
-                authentication, real-time tracking, and notifications
-                for delivery workflows.
-              </p>
-<div class="tags">
-<span class="tag">Flutter</span>
-<span class="tag">Node.js</span>
-<span class="tag">MongoDB</span>
-<span class="tag">JWT</span>
-</div>
-</div>
-</article>
-<!-- =================================================
-               BLOCKCHAIN
-          ================================================== -->
-<article class="project-card reveal" data-tags="mobile">
-<div class="project-image">
-<span class="project-number">
-                06
-              </span>
-<img alt="Blockchain learning app" loading="lazy" src="img/blockchain-app.png"/>
-</div>
-<div class="project-content">
-<h3 class="project-title">
-                Blockchain Learning App
-              </h3>
-<p class="project-description">
-                Educational mobile app built to simplify blockchain
-                concepts through a structured and accessible user
-                experience.
-              </p>
-<div class="tags">
-<span class="tag">Android Studio</span>
-<span class="tag">Kotlin</span>
-<span class="tag">REST API</span>
-</div>
-</div>
-</article>
-<!-- =================================================
-               GAMERS
-          ================================================== -->
-<article class="project-card large reveal" data-tags="web devops">
-<div class="project-image">
-<span class="project-number">
-                07
-              </span>
-<img alt="Professional websites portfolio" loading="lazy" src="img/ecommerce.png"/>
-</div>
-<div class="project-content">
-<h3 class="project-title">
-                Professional Websites I Hosted
-              </h3>
-<p class="project-description">
-                A highlighted selection of real business websites
-                that I developed, deployed, and maintained. They are
-                online now and available for immediate review by
-                recruiters, clients, and visitors.
-              </p>
-<div class="tags">
-<span class="tag">Laravel</span>
-<span class="tag">PHP</span>
-<span class="tag">MySQL</span>
-<span class="tag">Hostinger</span>
-<span class="tag">Deployment</span>
-<span class="tag">Production Support</span>
-</div>
-<div class="project-links">
-<a class="btn btn-primary btn-small" href="https://aisla-nova.es/" rel="noopener" target="_blank">
-                  Aisla Nova
-                </a>
-<a class="btn btn-outline btn-small" href="https://callenergievert.com/" rel="noopener" target="_blank">
-                  Call Energie Vert
-                </a>
-<a class="btn btn-outline btn-small" href="https://www.eco-call.fr/" rel="noopener" target="_blank">
-                  Eco-Call
-                </a>
-<a class="btn btn-outline btn-small" href="https://franceexpertisolation.fr/" rel="noopener" target="_blank">
-                  France Expert Isolation
-                </a>
-<a class="btn btn-outline btn-small" href="https://auditvision.fr/" rel="noopener" target="_blank">
-                  Audit Vision
-                </a>
-</div>
-</div>
-</article>
-<!-- =================================================
-               STUDENT PORTAL
-          ================================================== -->
-<article class="project-card reveal" data-tags="web">
-<div class="project-image">
-<span class="project-number">
-                08
-              </span>
-<img alt="Student portal" loading="lazy" src="img/student-portal.png"/>
-</div>
-<div class="project-content">
-<h3 class="project-title">
-                Student Portal
-              </h3>
-<p class="project-description">
-                Academic management portal with course follow-up,
-                grades, attendance, and notification features.
-              </p>
-<div class="tags">
-<span class="tag">ASP.NET Core</span>
-<span class="tag">Entity Framework</span>
-<span class="tag">SQL Server</span>
-</div>
-</div>
-</article>
-<!-- =================================================
-               UNITY
-          ================================================== -->
-<article class="project-card reveal" data-tags="games mobile">
-<div class="project-image">
-<span class="project-number">
-                09
-              </span>
-<img alt="Unity space shooter" loading="lazy" src="img/unity-space-shooter.png"/>
-</div>
-<div class="project-content">
-<h3 class="project-title">
-                Unity Space Shooter
-              </h3>
-<p class="project-description">
-                Arcade game project with power-ups, enemy waves,
-                and gameplay balancing for mobile or WebGL deployment.
-              </p>
-<div class="tags">
-<span class="tag">Unity</span>
-<span class="tag">C#</span>
-<span class="tag">Gameplay</span>
-</div>
-</div>
-</article>
-<!-- =================================================
-               CICD
-          ================================================== -->
-<article class="project-card reveal" data-tags="devops web">
-<div class="project-image">
-<span class="project-number">
-                10
-              </span>
-<img alt="CI/CD pipeline" loading="lazy" src="img/cicd-pipeline.png"/>
-</div>
-<div class="project-content">
-<h3 class="project-title">
-                CI/CD Workflow for Web &amp; Mobile Projects
-              </h3>
-<p class="project-description">
-                Continuous integration pipeline with Docker,
-                Jenkins, tests, and code quality gates to improve
-                delivery reliability.
-              </p>
-<div class="tags">
-<span class="tag">Docker</span>
-<span class="tag">Jenkins</span>
-<span class="tag">JUnit</span>
-<span class="tag">Mockito</span>
-<span class="tag">SonarQube</span>
-</div>
-</div>
-</article>
-</div>
-</div>
-</section>
-<!-- =======================================================
-         SKILLS
-    ======================================================== -->
+<article class="project-card reveal" data-tags="planning">
+<div class="project-image"><span class="project-number">01 / 08</span><img src="img/gamers-platform.png" alt="Visual illustrating Discovery &amp; Technical Planning" loading="lazy"></div>
+<div class="project-content"><h3 class="project-title">Discovery &amp; Technical Planning</h3><p class="project-description">From first brief to a practical delivery plan: clarify business goals, map user journeys, write user stories and acceptance criteria, estimate tasks, and organize the backlog into manageable iterations.</p><div class="tags"><span class="tag">Requirements Analysis</span><span class="tag">User Stories</span><span class="tag">Agile / Scrum</span><span class="tag">Jira</span><span class="tag">Figma</span><span class="tag">Technical Specifications</span></div></div></article>
+<article class="project-card reveal" data-tags="planning">
+<div class="project-image"><span class="project-number">02 / 08</span><img src="img/lowcode-platform.jpg" alt="Visual illustrating Solution Architecture &amp; System Design" loading="lazy"></div>
+<div class="project-content"><h3 class="project-title">Solution Architecture &amp; System Design</h3><p class="project-description">Design maintainable full-stack applications: define modules and responsibilities, choose the architecture, plan API contracts, model database relationships, and document the key technical decisions before coding.</p><div class="tags"><span class="tag">UML</span><span class="tag">MVC</span><span class="tag">Clean Architecture</span><span class="tag">REST API Design</span><span class="tag">OpenAPI / Swagger</span><span class="tag">Database Modeling</span></div></div></article>
+<article class="project-card reveal" data-tags="backend">
+<div class="project-image"><span class="project-number">03 / 08</span><img src="img/delivery-app.jpg" alt="Visual illustrating Backend Engineering &amp; Business Logic" loading="lazy"></div>
+<div class="project-content"><h3 class="project-title">Backend Engineering &amp; Business Logic</h3><p class="project-description">Build secure backend services, implement business rules, expose well-structured REST APIs, handle authentication and authorization, validate input, and integrate external services where needed.</p><div class="tags"><span class="tag">Symfony</span><span class="tag">Laravel</span><span class="tag">Spring Boot</span><span class="tag">PHP</span><span class="tag">Java</span><span class="tag">Node.js</span><span class="tag">JWT</span><span class="tag">OAuth 2.0</span></div></div></article>
+<article class="project-card reveal" data-tags="frontend">
+<div class="project-image"><span class="project-number">04 / 08</span><img src="img/blockchain-app.png" alt="Visual illustrating Frontend Development &amp; UX Integration" loading="lazy"></div>
+<div class="project-content"><h3 class="project-title">Frontend Development &amp; UX Integration</h3><p class="project-description">Translate wireframes and UI designs into responsive interfaces; build reusable components, forms, dashboards and role-based screens; integrate APIs while handling loading, errors and accessibility.</p><div class="tags"><span class="tag">Angular</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Tailwind CSS</span><span class="tag">Bootstrap</span><span class="tag">RxJS</span></div></div></article>
+<article class="project-card reveal" data-tags="backend">
+<div class="project-image"><span class="project-number">05 / 08</span><img src="img/ecommerce.png" alt="Visual illustrating Database Design &amp; Data Management" loading="lazy"></div>
+<div class="project-content"><h3 class="project-title">Database Design &amp; Data Management</h3><p class="project-description">Create relational schemas, queries and migrations, manage data integrity, refine indexes and troubleshoot slow operations. Keep development and production configuration clearly separated.</p><div class="tags"><span class="tag">MySQL</span><span class="tag">PostgreSQL</span><span class="tag">SQL</span><span class="tag">ORM</span><span class="tag">Doctrine</span><span class="tag">Eloquent</span><span class="tag">JPA / Hibernate</span><span class="tag">Migrations</span></div></div></article>
+<article class="project-card reveal" data-tags="quality">
+<div class="project-image"><span class="project-number">06 / 08</span><img src="img/student-portal.png" alt="Visual illustrating Testing, Review &amp; Application Security" loading="lazy"></div>
+<div class="project-content"><h3 class="project-title">Testing, Review &amp; Application Security</h3><p class="project-description">Check functionality across the stack with unit, integration and API tests; investigate bugs, review code, validate permissions, and address common security and performance issues before release.</p><div class="tags"><span class="tag">PHPUnit</span><span class="tag">JUnit</span><span class="tag">Mockito</span><span class="tag">Postman</span><span class="tag">Git</span><span class="tag">Code Review</span><span class="tag">OWASP</span><span class="tag">SonarQube</span></div></div></article>
+<article class="project-card reveal" data-tags="delivery">
+<div class="project-image"><span class="project-number">07 / 08</span><img src="img/unity-space-shooter.png" alt="Visual illustrating Deployment, Cloud &amp; CI/CD" loading="lazy"></div>
+<div class="project-content"><h3 class="project-title">Deployment, Cloud &amp; CI/CD</h3><p class="project-description">Package applications consistently with containers, automate build and test steps, manage environment variables, configure hosting and monitoring, and prepare repeatable releases and rollback procedures.</p><div class="tags"><span class="tag">Hostinger</span>Docker</span><span class="tag">Docker Compose</span><span class="tag">Jenkins</span><span class="tag">GitHub Actions</span><span class="tag">AWS (EC2 / S3 / RDS)</span><span class="tag">Nginx</span><span class="tag">Linux</span><span class="tag">CI/CD</span></div></div></article>
+<article class="project-card reveal" data-tags="delivery">
+<div class="project-image"><span class="project-number">08 / 08</span><img src="img/cicd-pipeline.png" alt="Visual illustrating Production Delivery &amp; Continuous Improvement" loading="lazy"></div>
+<div class="project-content"><h3 class="project-title">Production Delivery &amp; Continuous Improvement</h3><p class="project-description">Prepare a release checklist, verify the deployed application, document its setup, troubleshoot incidents, maintain APIs and dependencies, and turn user feedback into the next development iteration.</p><div class="tags"><span class="tag">Production Support</span><span class="tag">Monitoring &amp; Logs</span><span class="tag">Bug Fixing</span><span class="tag">Documentation</span><span class="tag">Performance</span><span class="tag">Backups</span><span class="tag">Maintenance</span></div></div></article>
+</div><p class="workflow-note">These stages describe the full-stack delivery process and relevant tools; individual project experience and proficiency may vary by technology.</p></div></section>
 <section class="section" id="skills">
 <div class="container">
 <div class="section-header reveal">
